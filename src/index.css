@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.content {
+  background-color: rgb(49, 44, 44);
+  height: 100vh;
+}
+
+.header {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  background-color: rgb(29, 29, 27);
+  align-items: center;
+}
+
+.header h4 {
+  margin: 20px;
+  cursor: pointer;
+  color: rgb(255, 170, 0);
+}
+
+.header .nav {
+  height: 50px;
+  list-style: none;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.header .nav li:first-child {
+  margin-left: 5px;
+}
+
+.header .nav li {
+  margin-right: 10px;
+}
+
+.header .nav li a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.header .nav .active {
+  text-decoration: underline;
+}
+
+.shelfContainer {
+  width: '100%';
+
+}
+
+.bookContainer {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 300px;
+  border-radius: 2px;
+  padding: 10px;
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+  background-color: white;
+  transition: all .2s ease-in-out;
+  margin-left: 20px;
+}
+
+.bookContainer:hover {
+  transform: scale(1.15);
+}
+
+.book-list {
+  background-color: rgb(49, 44, 44);
+  padding: 20px;
+}
+
+.book-list h3 {
+  width: fit-content;
+  color: rgb(255, 170, 0);
+}
+
+.imageContainer {
+  margin: 3px;
+}
+
+.imageContainer img {
+  width: 120px;
+  height: 250px;
+}
+
+.detailsContainer {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.book-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255, 170, 0);
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.book-card-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: '#565656';
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.book-title {
+  font-size: 36px;
+  font-weight: 200;
+  color: rgb(255, 170, 0);
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.book-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFF;
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.details-content {
+  display: flex;
+  color: #d5d9d9;
+}
+.details-content h5{
+  margin-right: 11px;
+}
+.description {
+  height: 80px;
+  width: 250px;
+  overflow: hidden;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  color: '#565656';
+  margin-bottom: 20px;
+}
+.details-description{
+  color: #d5d9d9;
+  font-size: 28px;
+  margin-top: 22px;
+}
+.title-shelf{
+  display: flex;
+  align-items: center;
+}
+.title-shelf span{
+  color: #d5d9d9;
+  font-size: 20px;
+  margin-left: 8px;
+}
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(255, 170, 0);
+  background-image: url("./icons/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.button-show-more {
+  background-color: rgb(255, 170, 0);
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button-show-more:hover {
+  background-color: #f0ede6;
+}
+
+.search-input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.search-page {
+  background-color: rgb(49, 44, 44);
+}
+
+.search-page h3 {
+  color: rgb(255, 170, 0);
+}
+
+.error{
+  height: 100%;
+  color: wheat;
+  padding: 18px;
+  text-align: center;
+}
