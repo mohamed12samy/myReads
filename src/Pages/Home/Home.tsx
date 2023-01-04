@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Book } from '../../Interfaces/Book';
 import { useDispatch, useSelector } from 'react-redux';
-import { getbooks } from '../../store/booksSlice';
+import { getbooks } from '../../redux/booksSlice';
 import { useNavigate } from 'react-router-dom';
 import { BookList } from '../../components/BookList/BookList';
-import { AppDispatch, RootState } from '../../store/store';
+import { AppDispatch, RootState } from '../../redux/store';
 import { Wrapper } from '../Wrapper';
 
 function Home() {

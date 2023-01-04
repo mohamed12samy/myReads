@@ -1,10 +1,10 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { store } from '../../store/store'
+import { store } from '../../redux/store'
 import { render, screen } from "@testing-library/react"
 import { BrowserRouter as Router } from 'react-router-dom'
 import Home from './Home'
-import { mockedBooks } from "../../store/books";
+import { mockedBooks } from "../../redux/books";
 
 test("test Home", () => {
     render(<Provider store={store}>

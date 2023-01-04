@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { BookList } from '../../components/BookList/BookList';
 import { Book } from '../../Interfaces/Book';
-import { getbooks } from '../../store/booksSlice';
-import { AppDispatch, RootState } from '../../store/store';
+import { getbooks } from '../../redux/booksSlice';
+import { AppDispatch, RootState } from '../../redux/store';
 
 export const Search = () => {
   const [searchResult, setSearchResult] = React.useState([] as Book[]);

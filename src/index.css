@@ -73,12 +73,15 @@ code {
   background-color: white;
   transition: all .2s ease-in-out;
   margin-left: 20px;
+  position: relative;
 }
 
 .bookContainer:hover {
   transform: scale(1.15);
 }
-
+.bookContainer:hover .book-shelf-changer{
+ display: block;
+}
 .book-list {
   background-color: rgb(49, 44, 44);
   padding: 20px;
@@ -167,8 +170,8 @@ code {
 }
 .book-shelf-changer {
   position: absolute;
-  right: 0;
-  bottom: -10px;
+  right: 10px;
+  bottom: -15px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -178,6 +181,7 @@ code {
   background-position: center;
   background-size: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: none;
 }
 
 .book-shelf-changer select {

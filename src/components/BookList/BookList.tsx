@@ -2,7 +2,7 @@ import { red } from '@mui/material/colors';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Book } from '../../Interfaces/Book';
-import { changeShelf, updateBookShelf } from '../../store/booksSlice';
+import { changeShelf, updateBookShelf } from '../../redux/booksSlice';
 import BookCard from '../BookCard/BookCard';
 import { handleChangeOnSelf, booksToShelfs } from '../../Helpers/BookUtility/bookUtility'
 

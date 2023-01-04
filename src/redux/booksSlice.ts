@@ -2,9 +2,8 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { Api } from "../Config/ApiConfig";
 import { Book } from "../Interfaces/Book";
 
+const {baseUrl, headers} = Api();
 export const getbooks = createAsyncThunk<Book[], void>("books/getBooks", async () => {
-    const {baseUrl, headers} = Api();
-
     const books = await fetch(`${baseUrl}/books`, { headers })
         .then((res) => res.json())
         .then((data) => data.books);
@@ -12,8 +11,6 @@ export const getbooks = createAsyncThunk<Book[], void>("books/getBooks", async (
 });
 
 export const updateBookShelf = createAsyncThunk<any, any>("books/updateBookShelf", async ({id,shelf}) => {
-    const {baseUrl, headers} = Api();
-console.log(id, shelf)
     const books = await  fetch(`${baseUrl}/books/${id}`, {
         method: "PUT",
         headers: {
@@ -26,8 +23,6 @@ console.log(id, shelf)
 });
 
 export const getBook = createAsyncThunk<Book, any>("books/getBook", async ({id}) => {
-    const {baseUrl, headers} = Api();
-
     const book = await   fetch(`${baseUrl}/books/${id}`, { headers })
     .then((res) => res.json())
     .then((data) => data.book);

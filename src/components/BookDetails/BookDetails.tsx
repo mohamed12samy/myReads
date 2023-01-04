@@ -3,7 +3,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import { Book } from '../../Interfaces/Book';
-import { RootState } from '../../store/store';
+import { RootState } from '../../redux/store';
 
 export const BookDetails = () => {
   const currentBook = useSelector<RootState, Book>((state) => state.books.currentBook);

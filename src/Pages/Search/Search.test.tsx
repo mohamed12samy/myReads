@@ -2,13 +2,13 @@ import { fireEvent, render, screen } from "@testing-library/react"
 import { Provider } from "react-redux"
 import { BrowserRouter as Router } from 'react-router-dom'
 import BookCard from "../../components/BookCard/BookCard"
-import { mockedBooks } from "../../store/books"
-import { store, getStoreWithState } from "../../store/store"
+import { mockedBooks } from "../../redux/books"
+import { store, getStoreWithState } from "../../redux/store"
 import React from 'react'
 import { Search } from "./Search"
 import userEvent from "@testing-library/user-event";
 import { Book } from "../../Interfaces/Book"
-import { changeShelf } from "../../store/booksSlice"
+import { changeShelf } from "../../redux/booksSlice"
 
 
 describe("test book search", () => {

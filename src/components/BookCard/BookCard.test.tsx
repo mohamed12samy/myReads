@@ -1,10 +1,10 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { store } from '../../store/store'
+import { store } from '../../redux/store'
 import { fireEvent, render, screen } from "@testing-library/react"
 import { BrowserRouter as Router, useNavigate } from 'react-router-dom'
 import BookCard from './BookCard'
-import { mockedBooks } from "../../store/books";
+import { mockedBooks } from "../../redux/books";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 

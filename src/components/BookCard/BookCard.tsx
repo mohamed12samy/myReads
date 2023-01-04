@@ -19,7 +19,7 @@ function BookCard({ book, onChangeSelf }): JSX.Element {
                 <button className='button-show-more' onClick={() => navigate(`/${book.id}`)}>show more</button>
             </div>
             <div className="book-shelf-changer">
-                <select onChange={(e) => selectHandler(e, book.id)} value={book.shelf}>
+                <select onChange={(e) => selectHandler(e, book.id)} value={book.shelf} className="selector">
                     <option value="none" disabled>
                         Move to...
                     </option>

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import BookCard from "../../components/BookCard/BookCard";
 import { Book } from "../../Interfaces/Book";
-import { changeShelf, updateBookShelf } from "../../store/booksSlice";
-import { AppDispatch, store } from "../../store/store";
+import { changeShelf, updateBookShelf } from "../../redux/booksSlice";
+import { AppDispatch, store } from "../../redux/store";
 
 
 

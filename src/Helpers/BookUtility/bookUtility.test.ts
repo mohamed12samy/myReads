@@ -1,8 +1,8 @@
 import {booksToShelfs, handleChangeOnSelf} from './bookUtility'
-import {mockedBooks} from '../../store/books'
+import {mockedBooks} from '../../redux/books'
 import { Book } from '../../Interfaces/Book';
-import {RootState, store} from '../../store/store'
-import bookReducer, { changeShelf, setBooksStore } from "../../store/booksSlice"
+import {RootState, store} from '../../redux/store'
+import bookReducer, { changeShelf, setBooksStore } from "../../redux/booksSlice"
 
 describe("book utility test", ()=>{
     it("books to shelves should divide books array and distribute it to shlves",()=>{
