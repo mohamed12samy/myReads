@@ -29,6 +29,19 @@ export const getBook = createAsyncThunk<Book, any>("books/getBook", async ({id})
         return book
 });
 
+export const searchBooks = createAsyncThunk<Book[], any>("books/search", async ({ query, maxResults }) => {
+    const res = await fetch(`${baseUrl}/search`, {
+        method: "POST",
+        headers: {
+          ...headers,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query, maxResults }),
+      })
+        .then((res) => res.json())
+        .then((data) => data.books);
+        return res;
+});
 const bookSlice = createSlice({
     name: "books",
     initialState: {
@@ -75,6 +88,20 @@ const bookSlice = createSlice({
             // console.log(action.payload, '\n', action.error)
             state.error = action.error
         })
+        builder.addCase(searchBooks.pending,(state, action)=>{
+            console.log("fetching search...");
+        })
+        builder.addCase(searchBooks.fulfilled,(state, action)=>{
+            console.log(action)
+            state.books = action.payload 
+            // return action.payload;
+        })
+        builder.addCase(searchBooks.rejected,(state, action)=>{
+            console.log(action)
+            //state.error = action.error
+            // return action.payload;
+        })
+
         builder.addCase(getBook.pending,(state, action)=>{
             console.log("fetching Book shelf...");
         })

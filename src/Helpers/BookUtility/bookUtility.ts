@@ -31,7 +31,7 @@ export const booksToShelfs = (books: Book[]): { currentlyReading: Book[], wantTo
     ) : [];
     const wantToRead = Array.isArray(books) ? books.filter((book) => book.shelf === "wantToRead") : [];
     const read = Array.isArray(books) ? books.filter((book) => book.shelf === "read") : [];
-    const noShelf = Array.isArray(books) ? books.filter((book) => book.shelf === "none") : [];
+    const noShelf = Array.isArray(books) ? books.filter((book) => book.shelf === "none" || book.shelf === undefined) : [];
     return { currentlyReading, wantToRead, read, noShelf };
 };
 

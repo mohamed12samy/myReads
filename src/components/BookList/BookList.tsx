@@ -28,7 +28,6 @@ export const BookList = ({ books }) => {
     useEffect(() => {
         setBooks(booksToShelfs(books));
     }, [books])
-
     return (
         <div className='book-list  row justify-content-center'>
             {

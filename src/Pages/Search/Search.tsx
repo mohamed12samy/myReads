@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { BookList } from '../../components/BookList/BookList';
 import { Book } from '../../Interfaces/Book';
-import { getbooks } from '../../redux/booksSlice';
+import { getbooks, searchBooks } from '../../redux/booksSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 
 export const Search = () => {
@@ -14,13 +14,13 @@ export const Search = () => {
   const dispatch = useDispatch<AppDispatch>();
   const books = useSelector<RootState, Book[]>((state) => state.books.books);
 
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     if (books?.length === 0) {
       dispatch(getbooks());
     }
-  }, [])
+  }, [])*/
 
-  React.useEffect(() => {
+  /*React.useEffect(() => {
      searchResult.some(b => {
       const filteredBook = books.find(book=> book.id === b.id && book.shelf !== b.shelf);
       if(filteredBook !== undefined){
@@ -29,10 +29,13 @@ export const Search = () => {
           return false;
       }
         })
-  }, [books])
+  }, [books])*/
 
   const handleBooksSearch = (event) => {
-    let  searchWord = event.target.value;
+
+    dispatch(searchBooks({query:event.target.value, maxResults:1}))
+
+    /*let  searchWord = event.target.value;
     if ( searchWord.trim() !== "") {
       const  filterdBooks = books.filter((book) => {
         const title = book.title;
@@ -47,21 +50,14 @@ export const Search = () => {
     }
     else {
       setSearchResult([]);
-    }
+    }*/
   }
-  
+
   return (
     <div className='search-page'  >
       <input className="search-input" placeholder="Search by title, author, or ISBN" onChange={handleBooksSearch} />
-      { searchResult.length > 0 ?
-        <BookList books={ searchResult} />
-        :
-        <>
-          <div className='text-center'>
-            <h3>No data is found</h3>
-          </div>
-        </>
-      }
+      <BookList books={ books} />
+     
     </div>
   )
 }

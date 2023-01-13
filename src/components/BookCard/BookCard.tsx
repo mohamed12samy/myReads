@@ -15,11 +15,11 @@ function BookCard({ book, onChangeSelf }): JSX.Element {
             <div className="detailsContainer">
                 <p className="book-card-title" id='title'>{book.title}</p>
                 {book.subtitle && <p className="book-card-subtitle">{book.subtitle}</p>}
-                <p className="description" id='desc'>{book.description.length > 80 ? `${book.description.substring(0, 120)}...` :  book.description}</p>
+                <p className="description" id='desc'>{book.description?.length > 80 ? `${book.description?.substring(0, 120)}...` :  book.description}</p>
                 <button className='button-show-more' onClick={() => navigate(`/${book.id}`)}>show more</button>
             </div>
             <div className="book-shelf-changer">
-                <select onChange={(e) => selectHandler(e, book.id)} value={book.shelf} className="selector">
+                <select onChange={(e) => selectHandler(e, book.id)} value={book.shelf ?? "none"} className="selector">
                     <option value="none" disabled>
                         Move to...
                     </option>

@@ -16,7 +16,7 @@ export const BookDetails = () => {
           <img className="w-100 h-70" src={currentBook.imageLinks?.thumbnail} alt={`${currentBook.title}`} />
         </div>
         <div className="">
-          <div className="contents col-lg-7 col-12">
+          <div className="contents">
             <div className='title-shelf'>
             <h1 className="book-title ml-0">{currentBook.title}</h1>
             <span>( {currentBook.shelf} )</span>
